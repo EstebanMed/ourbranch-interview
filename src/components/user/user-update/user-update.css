@@ -1,0 +1,41 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.save {
+    color: white;
+    background-color: #0070c9;
+    border-radius: 4px;
+    border: solid 1px #0070c9
+  }
+
+  input:focus { 
+    outline: steelblue;
+    border-color: #719ECE;
+    box-shadow: 0 0 10px #719ECE;
+}
+
+.form {
+    display: flex;
+}
+
+.section {
+    width: 50%;
+    margin-top: 0;
+    padding: 7px;
+}
+
+.section label {
+    display: inherit;
+    padding-bottom: 5px;
+}
+
+.vertical-separator {
+    border-right: 1px solid #e5e5e5;
+}
+
+label {
+    font-weight: bold;
+}
