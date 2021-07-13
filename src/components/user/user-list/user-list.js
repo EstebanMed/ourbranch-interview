@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 import { RESET_USERS, DELETE_USERS, ALL_USERS_QUERY } from '../user.queries';
 import './user-list.css';
 
-const UserList = ({currentUsers, setCurrentUsers}) => {
+const UserList = ({currentUsers, setCurrentUsers, refetch}) => {
     const history = useHistory()
 
     const deleteUsersSelected = currentUsers.filter(user => user.isChecked)
@@ -36,20 +36,21 @@ const UserList = ({currentUsers, setCurrentUsers}) => {
         const index = event.target.getAttribute('index')
         const user = currentUsers[index]
 
-        history.push(`/edit/${user.email}`)
+        history.push(`/edit/${user.email}/${user.name}/${user.role}`)
     }, [currentUsers, history]);
 
     const handleResetUsers = useCallback(() => {
         resetUsers()
     }, [resetUsers],);
 
-    const handleDelete = useCallback(() => {
-        deleteUsers({
+    const handleDelete = useCallback(async () => {
+        await deleteUsers({
             variables: {
                 emails: usersToDelete
             }
         })
-    }, [deleteUsers, usersToDelete]);
+        await refetch()
+    }, [deleteUsers, refetch, usersToDelete]);
 
     return (
         <>

@@ -1,26 +1,19 @@
 import React, {useCallback, useRef} from "react";
-import { useMutation, useQuery } from '@apollo/react-hooks';
-import { useParams, useHistory, Link } from "react-router-dom";
+import { useMutation } from '@apollo/react-hooks';
+import { useParams, useHistory } from "react-router-dom";
 
 import { UPDATE_USER_MUTATION, ALL_USERS_QUERY, GET_USER } from '../user.queries';
 import './user-update.css'
 
 const UserUpdate = () => {
-    let { email } = useParams();
+    let { email, name, role } = useParams();
 
-    const { loading, error, data } = useQuery(GET_USER, {
-        variables: { email },
-      });
 
-    if (loading) {
-      return <p>Loading...</p>;
+    const selectedUserInput = {
+        email,
+        name,
+        role
     }
-  
-    if (error) {
-      return <p>Error: {JSON.stringify(error)}</p>;
-    }
-
-    const selectedUserInput = data.user
   
     return (
         <UserUpdateForm selectedUserInput={selectedUserInput} />
@@ -35,8 +28,8 @@ const UserUpdateForm = ({selectedUserInput}) => {
         refetchQueries: [{query: ALL_USERS_QUERY}]
     });
 
-    const handleSave = useCallback(() => {
-        updateUser(
+    const handleSave = useCallback(async () => {
+        await updateUser(
             {
                 variables: {
                     email: selectedUser.current.email, 

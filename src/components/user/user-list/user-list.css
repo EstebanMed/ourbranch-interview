@@ -74,6 +74,6 @@ button[disabled]{
 }
 
 .selection:hover {
-    cursor: pointer;
+    cursor: initial;
     color: #0070c9;
 }

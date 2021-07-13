@@ -7,33 +7,36 @@ import load from '../../img/loader.gif';
 import './user.css'
 
 const User = () => {
-    const { loading, error, data } = useQuery(ALL_USERS_QUERY);
+  const { loading, error, data, refetch } = useQuery(ALL_USERS_QUERY, { fetchPolicy: "no-cache" });
 
-    if (loading) {
-      return <img src={load} alt="Loading..." className="loader"/>;
-    }
-  
-    if (error) {
-      return <p>Error: {JSON.stringify(error)}</p>;
-    }
-
-    const usersMapped = data.allUsers.map(user => ({...user, isChecked: false}))
-  
-    return (
-        <UserForm usersMapped={usersMapped} />
-    )
+  if (loading) {
+    return <img src={load} alt="Loading..." className="loader" />;
   }
 
-const UserForm = ({usersMapped}) => {
-    const [currentUsers, setCurrentUsers] = useState(usersMapped)
+  if (error) {
+    return <p>Error: {JSON.stringify(error)}</p>;
+  }
 
-    useEffect(() => {
-        setCurrentUsers(usersMapped)
-    }, [usersMapped])
+  const usersMapped = data.allUsers.map(user => ({ ...user, isChecked: false }))
 
-    return (
-      <UserList currentUsers={currentUsers} setCurrentUsers={setCurrentUsers}/>
-    )
+  return (
+    <UserForm usersMapped={usersMapped} refetch={refetch} />
+  )
+}
+
+const UserForm = ({ usersMapped, refetch }) => {
+  const [currentUsers, setCurrentUsers] = useState(usersMapped)
+
+  useEffect(() => {
+    setCurrentUsers(usersMapped)
+  }, [usersMapped])
+
+  return (
+    <UserList
+      currentUsers={currentUsers}
+      setCurrentUsers={setCurrentUsers}
+      refetch={refetch} />
+  )
 }
 
 export default User
