@@ -6,6 +6,7 @@
 
 .header h1 {
     font-size: 34px;
+    font-family: 'SFProDisplay';
 }
 
 .delete {
@@ -67,6 +68,12 @@ button[disabled]{
     border-bottom: 1px solid #e5e5e5;
     padding: 5px;
     font-size: 13px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.14px;
+    color: #333333;
 }
 
 .td.checkbox {

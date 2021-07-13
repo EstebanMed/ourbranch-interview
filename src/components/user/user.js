@@ -7,7 +7,7 @@ import load from '../../img/loader.gif';
 import './user.css'
 
 const User = () => {
-  const { loading, error, data, refetch } = useQuery(ALL_USERS_QUERY, { fetchPolicy: "no-cache" });
+  const { loading, error, data, refetch } = useQuery(ALL_USERS_QUERY, { fetchPolicy: "network-only" });
 
   if (loading) {
     return <img src={load} alt="Loading..." className="loader" />;

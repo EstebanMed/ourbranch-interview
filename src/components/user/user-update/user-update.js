@@ -72,7 +72,7 @@ const UserUpdateForm = ({selectedUserInput}) => {
                     <div className="radioButtonText"><input type="radio" value="ADMIN" name="role" defaultChecked={selectedUser.current.role === 'ADMIN'} onChange={handleRoleChanged}/>Admin</div>
                     <div className="radioButtonText"><input type="radio" value="DEVELOPER" name="role" defaultChecked={selectedUser.current.role === 'DEVELOPER'} onChange={handleRoleChanged}/>Developer</div>
                     <div className="radioButtonText"><input type="radio" value="APP_MANAGER" name="role" defaultChecked={selectedUser.current.role === 'APP_MANAGER'} onChange={handleRoleChanged}/>App Manager</div>
-                    <div className="radioButtonText"><input type="radio" value="MARKETING" name="role" defaultChecked={selectedUser.role === 'MARKETING'} onChange={handleRoleChanged}/>Marketing</div>
+                    <div className="radioButtonText"><input type="radio" value="MARKETING" name="role" defaultChecked={selectedUser.current.role === 'MARKETING'} onChange={handleRoleChanged}/>Marketing</div>
                     <div className="radioButtonText"><input type="radio" value="SALES" name="role" defaultChecked={selectedUser.current.role === 'SALES'} onChange={handleRoleChanged}/>Sales</div>
                 </div>
             </div>

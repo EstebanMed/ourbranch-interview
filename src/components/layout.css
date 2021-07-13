@@ -1,11 +1,25 @@
+@font-face {
+    font-family: 'SFProText-Regular';
+    src: url('../fonts/FontsFree-Net-SFProText-Regular.ttf'); 
+  }
+@font-face {
+    font-family: 'SFProDisplay';
+    src: url('../fonts/FontsFree-Net-SFProDisplay-Bold.ttf'); 
+    }
+
 .container {
     padding: 41px 58px 71px 82px;
 }
 
 body {
-    font-family: "Segoe UI"
+    font-family: 'SFProText-Regular'
 }
 
 button {
     padding: .375rem .75rem;
+    font-family: 'SFProText-Regular'
+}
+
+input {
+    font-family: 'SFProText-Regular'
 }
