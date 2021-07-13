@@ -2,12 +2,11 @@ import React, {useCallback, useRef} from "react";
 import { useMutation } from '@apollo/react-hooks';
 import { useParams, useHistory } from "react-router-dom";
 
-import { UPDATE_USER_MUTATION, ALL_USERS_QUERY, GET_USER } from '../user.queries';
+import { UPDATE_USER_MUTATION, ALL_USERS_QUERY } from '../user.queries';
 import './user-update.css'
 
 const UserUpdate = () => {
     let { email, name, role } = useParams();
-
 
     const selectedUserInput = {
         email,
