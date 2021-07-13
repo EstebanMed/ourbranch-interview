@@ -76,6 +76,10 @@ button[disabled]{
     color: #333333;
 }
 
+.tr:hover{
+    background-color: #fafafa;
+}
+
 .td.checkbox {
     width: 25px;
 }
