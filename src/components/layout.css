@@ -1,7 +1,11 @@
 .container {
-    padding: 4rem;
+    padding: 41px 58px 71px 82px;
 }
 
 body {
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+    font-family: "Segoe UI"
+}
+
+button {
+    padding: .375rem .75rem;
 }

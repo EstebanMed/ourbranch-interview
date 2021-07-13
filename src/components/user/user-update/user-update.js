@@ -63,7 +63,7 @@ const UserUpdateForm = ({selectedUserInput}) => {
 
     return (
         <>
-            <Link to="/">Back</Link>
+            {/* <Link to="/">Back</Link> */}
             <div className="header">
                 <h1>{selectedUser.current.email}</h1>
                 <button type="button" className="save" onClick={handleSave}>Save</button>
@@ -72,16 +72,16 @@ const UserUpdateForm = ({selectedUserInput}) => {
             <div className="form">
                 <div className="section">
                     <label>Name</label>
-                    <input type="text" name="name" defaultValue={selectedUser.current.name} onChange={handleNameChanged}></input>
+                    <input type="text" className="textbox" name="name" defaultValue={selectedUser.current.name} onChange={handleNameChanged}></input>
                 </div>
                 <div className="vertical-separator"></div>
                 <div className="section">
                     <label>Role</label>
-                    <div><input type="radio" value="ADMIN" name="role" defaultChecked={selectedUser.current.role === 'ADMIN'} onChange={handleRoleChanged}/>Admin</div>
-                    <div><input type="radio" value="DEVELOPER" name="role" defaultChecked={selectedUser.current.role === 'DEVELOPER'} onChange={handleRoleChanged}/>Developer</div>
-                    <div><input type="radio" value="APP_MANAGER" name="role" defaultChecked={selectedUser.current.role === 'APP_MANAGER'} onChange={handleRoleChanged}/>App Manager</div>
-                    <div><input type="radio" value="MARKETING" name="role" defaultChecked={selectedUser.role === 'MARKETING'} onChange={handleRoleChanged}/>Marketing</div>
-                    <div><input type="radio" value="SALES" name="role" defaultChecked={selectedUser.current.role === 'SALES'} onChange={handleRoleChanged}/>Sales</div>
+                    <div className="radioButtonText"><input type="radio" value="ADMIN" name="role" defaultChecked={selectedUser.current.role === 'ADMIN'} onChange={handleRoleChanged}/>Admin</div>
+                    <div className="radioButtonText"><input type="radio" value="DEVELOPER" name="role" defaultChecked={selectedUser.current.role === 'DEVELOPER'} onChange={handleRoleChanged}/>Developer</div>
+                    <div className="radioButtonText"><input type="radio" value="APP_MANAGER" name="role" defaultChecked={selectedUser.current.role === 'APP_MANAGER'} onChange={handleRoleChanged}/>App Manager</div>
+                    <div className="radioButtonText"><input type="radio" value="MARKETING" name="role" defaultChecked={selectedUser.role === 'MARKETING'} onChange={handleRoleChanged}/>Marketing</div>
+                    <div className="radioButtonText"><input type="radio" value="SALES" name="role" defaultChecked={selectedUser.current.role === 'SALES'} onChange={handleRoleChanged}/>Sales</div>
                 </div>
             </div>
         </>

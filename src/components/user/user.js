@@ -20,9 +20,7 @@ const User = () => {
     const usersMapped = data.allUsers.map(user => ({...user, isChecked: false}))
   
     return (
-      <pre>
         <UserForm usersMapped={usersMapped} />
-      </pre>
     )
   }
 

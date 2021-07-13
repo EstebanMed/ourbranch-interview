@@ -57,7 +57,7 @@ const UserList = ({currentUsers, setCurrentUsers}) => {
             <h1>Users</h1>
             <div>
                 <button type="button" className="delete" disabled={disableDelete} onClick={handleDelete}>Delete</button>
-                <button type="button" className="reset" onClick={handleResetUsers}>Reset Users</button>
+                {/* <button type="button" className="reset" onClick={handleResetUsers}>Reset Users</button> */}
             </div>
         </div>
         <hr className="separator"></hr>
@@ -70,9 +70,9 @@ const UserList = ({currentUsers, setCurrentUsers}) => {
             </div>
             <div className="tbody">
             { currentUsers.map((user,index) => (
-                <div key={user.email} onClick={handleSelectedUser} className="tr selection" >
-                    <div index={index} className="td"><input type="checkbox" index={index} checked={user.isChecked} onChange={handleChange} /></div>
-                    <div index={index} className="td">{user.email}</div>
+                <div key={user.email} onClick={handleSelectedUser} className="tr" >
+                    <div index={index} className="td checkbox"><input type="checkbox" index={index} checked={user.isChecked} onChange={handleChange} /></div>
+                    <div index={index} className="td selection">{user.email}</div>
                     <div index={index} className="td">{user.name}</div>
                     <div index={index} className="td">{user.role}</div>
                 </div>
